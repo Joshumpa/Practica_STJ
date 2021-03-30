@@ -1,0 +1,54 @@
+Usando los siguientes componentes:
+-Bootstrap v3.3.7
+-jQuery 3.3.1
+-jQuery Mask
+-Select2
+-PHP 7.0
+
+*** NO USAR FRAMEWORK ***
+
+Vista Empleado (Alta/Desplegado) responsiva
+	Campos Empleado
+		(Datos Generales)
+		-ApellidoPaterno*
+		-ApellidoMaterno*
+		-Nombre*
+		-Sexo*
+		-FechaNacimiento*
+		-NumeroEmpleado*
+		-NumeroPension
+		-Fotografia -->Debe mostrarse preview al seleccionar imagen, imagen default Silueta.png, el archivo debe ser "IdEmmpleado.jpg"
+		(Datos Adicionales)
+		-CURP*--> Aplicar mascara
+		-RFC* --> Aplicar mascara
+		-EstadoCivil*
+		-TipoSangre*
+		-Estatura*
+		-Peso*
+		-Complexion*
+		-Discapacidad
+		(Domicilio) (La relacion en cascada es con llaves compuestas.)
+		-Pais*
+		-Estado*
+		-Municipio*
+		-Localidad*
+		-Colonia*
+		-CodigoPostal*
+		-TipoVialidad*
+		-NombreVialidad*
+		-NumeroExterior*
+		-NumeroInterior
+	Estudios (n estudios, agregar/remover)
+		-Escuela*
+		-Grado Estudio*
+		-FechaInicio*
+		-FechaFin*
+Back End
+	-Crear modelo Empleado/Estudio para validar campos, asi como instanciar y obtener propiedades para desplegar en vista
+	-Se debe guardar empleado en txt en formado json, el nombre de el archivo sera su id(Generar random), este para ser utilizado en el desplegado, se pasara por parametro en la url -- IdEmpleado=###
+	-Cuando se tenga el parametro desplegar las propiedades de la clase empleado donde corresponda
+	-Utilizar Catalogo.php, para llenar selects
+
+*Campos Obligatorios para el guardado
+**Todo es modificable
+**Usar peticion asincrona para el guardado.

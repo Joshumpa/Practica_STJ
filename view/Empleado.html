@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Alta de Empleados</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/select2.min.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="../js/select2.min.js" type="text/javascript"></script>
+    <script src="../js/Empleado.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"> Formulario de Registro </div>
+                    <div class="panel-body">
+                        <form id="frmEmpleado">
+                            <div id="erroresFrmEmpleado" class="alert alert-danger"></div>
+                            <div class="col-md-12">
+                                <h3>Información del Empleado</h3>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group col-md-6">
+                                            <label for="txtPaterno" class="form-inline">Apellido paterno</label>
+                                            <input class="form-control" id="txtPaterno" type="text">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="txtMaterno" class="form-inline">Apellido materno</label>
+                                            <input class="form-control" id="txtMaterno" type="text">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="txtNombre" class="form-inline">Nombre</label>
+                                            <input class="form-control" id="txtNombre" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row" align="center">
+                                        <label for="fotografia" class="form-inline">Fotografía</label>
+                                        <div class="form-group col-md-4">
+                                            <img id='prevFoto' width="70" height="70" src="../img/silueta.png" />
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <input class="form-control-file" id="fotografia" type="file">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="selSexo" class="form-inline">Sexo</label>
+                                        <select class="form-control " id="selSexo" type="text"></select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="txtFechaNacimiento" class="form-inline">Fecha Nacimiento</label>
+                                        <input class="form-control" id="txtFechaNacimiento" type="date">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="txtNumEmpleado" class="form-inline">No. Empleado</label>
+                                        <input class="form-control" id="txtNumEmpleado" type="number" min="0">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="txtPension" class="form-inline">No. Pensión</label>
+                                        <input class="form-control" id="txtPension" type="number" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <h3>Datos adicionales</h3>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="txtCurp" class="form-inline">CURP</label>
+                                        <input class="form-control" id="txtCurp" type="text">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="txtRfc" class="form-inline">RFC</label>
+                                        <input class="form-control" id="txtRfc" type="text">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="selEstadoCivil" class="form">Estado Civil</label>
+                                        <select class="form-control js-example-basic-single" id="selEstadoCivil"
+                                            type="text"></select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="selTipoSangre" class="form">Tipo de sangre</label>
+                                        <select class="form-control js-example-basic-single" id="selTipoSangre"
+                                            type="text"></select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="txtEstatura" class="form-inline">Estatura</label>
+                                        <input class="form-control" id="txtEstatura" type="number" min="0">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="txtPeso" class="form-inline">Peso</label>
+                                        <input class="form-control" id="txtPeso" type="number" min="0">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="selComplexion" class="form">Complexión</label>
+                                        <select class="form-control js-example-basic-single" id="selComplexion"
+                                            type="text"></select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="selCatDiscapacidad" class="form">Discapacidad</label>
+                                        <select class="form-control js-example-basic-single"
+                                            id="selCatDiscapacidad"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <h3>Domicilio</h3>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="selPais" class="form">País</label>
+                                        <select class="form-control js-example-basic-single" id="selPais"></select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="selEstado" class="form">Estado</label>
+                                        <select class="form-control js-example-basic-single" id="selEstado"></select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="selMunicipio" class="form">Municipio</label>
+                                        <select class="form-control js-example-basic-single" id="selMunicipio"></select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="selLocalidad" class="form">Localidad</label>
+                                        <select class="form-control js-example-basic-single" id="selLocalidad"></select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="selColonia" class="form">Colonia</label>
+                                        <select class="form-control js-example-basic-single" id="selColonia"></select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="txtCodigoPostal" class="form">Código Postal</label>
+                                        <input class="form-control" id="txtCodigoPostal">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="txtTipoVialidad" class="form-inline">Tipo Vialidad</label>
+                                        <input class="form-control" id="txtTipoVialidad" type="text">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="txtNombreVialidad" class="form-inline">Nombre Vialidad</label>
+                                        <input class="form-control" id="txtNombreVialidad" type="text">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="txtNumExterior" class="form-inline">Número Exterior</label>
+                                        <input class="form-control" id="txtNumExterior" type="number" min="0">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="txtNumInterior" class="form-inline">Número Interior</label>
+                                        <input class="form-control" id="txtNumInterior" type="number" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        Agregar Estudios
+                                    </button>
+                                </div>
+                                <div class="col-md-6" align="right">
+                                    <button class=" btn btn-primary">Guardar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"> Vista previa </div>
+                    <div class="panel-body" id="vistaPrevia">
+                        <div class="row">
+                            <div class="col-md-4" align="center">
+                                <img id="fotografiaVistaPrevia" width="100" height="100" align="center">
+                            </div>
+                            <div class="col-md-2">
+                                <label>Apellido paterno: </label>
+                                <h5 id="lblPaterno"> </h5>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Apellido materno: </label>
+                                <h5 id="lblMaterno"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Nombre: </label>
+                                <h5 id="lblNombre"> </h5>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>fecha de nacimiento: </label>
+                                <h5 id="lblFechaNacimiento"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Numero de empleado: </label>
+                                <h5 id="lblNumEmpleado"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Numero de pension: </label>
+                                <h5 id="lblPension"> </h5>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>CURP: </label>
+                                <h5 id="lblCurp"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>RFC: </label>
+                                <h5 id="lblRfc"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Estado civil: </label>
+                                <h5 id="lblEstadoCivil"> </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Tipo de sangre: </label>
+                                <h5 id="lblTipoSangre"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Estatura: </label>
+                                <h5 id="lblEstatura"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Peso: </label>
+                                <h5 id="lblPeso"> </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Complexion: </label>
+                                <h5 id="lblComplexion"> </h5>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Discapacidad: </label>
+                                <h5 id="lblDiscapacidad"> </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>País: </label>
+                                <h5 id="lblPais"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Estado: </label>
+                                <h5 id="lblEstado"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Municipio: </label>
+                                <h5 id="lblMunicipio"> </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Localidad: </label>
+                                <h5 id="lblLocalidad"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Colonia: </label>
+                                <h5 id="lblColonia"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Codigo Postal: </label>
+                                <h5 id="lblCodigoPostal"> </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Tipo de vialidad: </label>
+                                <h5 id="lblTipoVialidad"> </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Vialidad: </label>
+                                <h5 id="lblVialidad"> </h5>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Numero exterior: </label>
+                                <h5 id="lblNumExterior"> </h5>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Numero Interior: </label>
+                                <h5 id="lblnumInterior"> </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <hr>
+                                <h4>Estudios</h4>
+                                <div id="ulEstudios">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Estudios</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="frmEstudios">
+                                <h3>Estudios</h3>
+                                <div id="erroresFrmEstudios" class="alert alert-danger"></div>
+                                <div id="listaEstudios" class="alert alert-info"></div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="txtEscuela" class="form-inline">Escuela</label>
+                                        <input class="form-control" id="txtEscuela">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="txtGradoEstudio" class="form-inline">Grado de estudio</label>
+                                        <input class="form-control" id="txtGradoEstudio">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="txtDesde" class="form-inline">Desde</label>
+                                        <input class="form-control" id="txtDesde" type="date">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="txtHasta" class="form-inline">Hasta</label>
+                                        <input class="form-control" id="txtHasta" type="date">
+                                    </div>
+                                </div>
+                                <div class="row"><button class="btn btn-block" id="btnEstudio">Agregar estudio</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
