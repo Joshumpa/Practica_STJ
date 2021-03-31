@@ -5,6 +5,7 @@ var localidad = 1;
 var estudios = [];
 var empleado = [];
 var id;
+
 $(document).ready(function () {
     cargarMascarasForm();
     cargarSelectSexo();
@@ -35,6 +36,7 @@ $(document).ready(function () {
     });
 
 });
+
 function validarEmpleado() {
     paterno = $('#txtPaterno').val();
     materno = $('#txtMaterno').val();
